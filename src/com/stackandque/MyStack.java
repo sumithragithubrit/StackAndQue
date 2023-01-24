@@ -28,6 +28,29 @@ public class MyStack<T> {
         }
         System.out.println();
     }
+    
+    //pop operation using pop method
+    public void pop() {
+        if (head == null) {
+            System.out.println("List is empty");
 
+        } else {
+
+            if (head != tail) {
+                head = head.next;
+            } else {
+                head = tail = null;
+            }
+        }
+
+    }
+    // peak method
+    public void peak() {
+        if ( head != null){
+            System.out.println("Top most element is "+ head.key);
+        }else {
+            System.out.println("No element present in list");
+        }
+    }
 
 }
