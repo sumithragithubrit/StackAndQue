@@ -4,18 +4,20 @@ public class MyStack<T> {
 	
 	Node<T> head;
     Node<T> tail;
-
-    public void push(T key) {
+//append method
+    public void append(T key) {
         Node<T> newNode = new Node<>(key);
         if (head == null) {
             head = newNode;
             tail = newNode;
         } else {
-            newNode.next = head;
-            head = newNode;
+            tail.next = newNode;
+            tail = newNode;
         }
+
     }
     
+    //to display method
     public void display() {
         Node<T> temp = head;
         while (temp != null) {
@@ -28,8 +30,8 @@ public class MyStack<T> {
         }
         System.out.println();
     }
-    
-    //pop operation using pop method
+
+    //pop method
     public void pop() {
         if (head == null) {
             System.out.println("List is empty");
@@ -44,13 +46,13 @@ public class MyStack<T> {
         }
 
     }
-    // peak method
-    public void peak() {
+
+
+    public void peak(){
         if ( head != null){
             System.out.println("Top most element is "+ head.key);
         }else {
             System.out.println("No element present in list");
         }
     }
-
 }
